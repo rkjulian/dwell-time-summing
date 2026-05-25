@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# R / RStudio
+.Rhistory
+.Rproj.user/
+*.Rproj
