@@ -8,9 +8,7 @@ rm(list=ls())
 # the choice 'var' was not provided due to the complex propagation of variance
 weight <- '1/x^2' # choices: 'none','1/x^2'
 
-# data obtained from "Chromatogram Peak Counts.R"
-# summarized in "Chromatogram Peak Counts.docx"
-#   and "Chromatogram Peak Counts d5.docx"
+# data from chromatogram_peak_counts.R (analyte and d5 transitions)
 # Note: the avg-values are the average of four replicate normalized areas
 conc <- c(50,100,200,250,500)
 cnt96 <- array(0,dim=c(5,4))

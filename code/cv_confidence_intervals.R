@@ -47,3 +47,20 @@ cat(" 6 ms (CV =", cv_06, "):",
     "[", round(ci_06["lower"], 3), ",", round(ci_06["upper"], 3), "]\n\n")
 cat("Intervals overlap:",
     ci_06["lower"] < ci_96["upper"] && ci_96["lower"] < ci_06["upper"], "\n")
+
+# Chromatographic data: n = 4 replicates (Table 3, 50 ng/mL row)
+n4 <- 4
+
+cv_96_n4 <- 0.0149
+ci_96_n4 <- cv_ci(cv_96_n4, n4)
+
+cv_06_n4 <- 0.0185
+ci_06_n4 <- cv_ci(cv_06_n4, n4)
+
+cat("\nn =", n4, "(chromatographic replicates, Table 3 50 ng/mL CVs)\n\n")
+cat("96 ms (CV =", cv_96_n4, "):",
+    "[", round(ci_96_n4["lower"], 4), ",", round(ci_96_n4["upper"], 4), "]\n")
+cat(" 6 ms (CV =", cv_06_n4, "):",
+    "[", round(ci_06_n4["lower"], 4), ",", round(ci_06_n4["upper"], 4), "]\n\n")
+cat("Intervals overlap:",
+    ci_06_n4["lower"] < ci_96_n4["upper"] && ci_96_n4["lower"] < ci_06_n4["upper"], "\n")

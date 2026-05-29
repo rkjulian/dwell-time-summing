@@ -8,9 +8,7 @@ rm(list=ls())
 # the choice 'var' was not provided due to the complex propagation of variance
 weighted <- 'none' # choice: 'none','1/x^2'
 
-# data obtained from "Flow Injection Plateau Rates.R"
-# summarized in "Flow Injection Plateau Rates.docx"
-#   and "Flow Injection Plateau d5 Rates.docx"
+# data from flow_injection_full_trace_rate.R (analyte and d5 transitions)
 # Note: the avg-values are the average of three replicate normalized areas
 conc <- c(50,250,500,1000,1500)
 rt96 <- array(0,dim=c(5,3))

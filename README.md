@@ -34,8 +34,8 @@ All R scripts assume the working directory is the repository root. Scripts read 
 ### Requirements
 
 - R (>= 4.0)
-- CRAN packages: `MASS`, `NADA`
-- No Bioconductor or tidyverse dependencies
+- CRAN packages: `MASS`, `NADA`, `dplyr`, `tibble`
+- No Bioconductor or full-tidyverse dependencies
 
 ### Script-to-Manuscript Map
 
@@ -46,13 +46,16 @@ All R scripts assume the working directory is the repository root. Scripts read 
 | Figure 3 (Excess noise CV vs concentration) | `dwell_time_cv_vs_concentration.R` |
 | Figure 4 (Combined calibration, panels A+B) | `flow_injection_calibration_combined.R` |
 | Figure 5 (Chromatogram peak) | `chromatogram_peak_counts.R`, `chromatogram_peak_rates.R` |
+| Figure 6 (Allan deviation) | `allan_deviation_analysis.R` (sources `allan_deviation.R`) |
 | Table 1 (Plateau statistics) | `flow_injection_full_trace_rate.R`, `flow_injection_full_trace_count.R`, `table_1_values.R` |
 | Table 2 (Flow injection calibration) | `flow_injection_calibration_rate.R`, `flow_injection_calibration_count.R`, `table_2_slope_corrections.R` |
 | Table 3 (EMG peak areas) | `chromatogram_peak_rates.R`, `chromatogram_peak_counts.R` |
-| Table 4 (Chromatography calibration) | `chromatogram_calibration_peak_rates.R`, `chromatogram_calibration_peak_counts.R` |
-| Table 5 (Correlation and covariance) | `flow_injection_dt_rate_average_correlations.R`, `flow_injection_dt_count_average_correlations.R` |
+| Table 4 (Correlation and covariance) | `flow_injection_dt_rate_average_correlations.R`, `flow_injection_dt_count_average_correlations.R` |
 | Table S1 (Reverse calibration, flow injection) | `flow_injection_reverse_calibration_rate_simulation.R`, `flow_injection_reverse_calibration_count_simulation.R` |
 | Table S2 (Reverse calibration, chromatography) | `chromatogram_reverse_calibration_rate_simulation.R`, `chromatogram_reverse_calibration_count_simulation.R` |
+| Table S3 (Chromatography calibration parameters) | `chromatogram_calibration_peak_rates.R`, `chromatogram_calibration_peak_counts.R` |
+| Table S4 (Allan deviation log-log slopes) | `allan_deviation_analysis.R` |
+| Figure S1 (Raw vs detrended Allan deviation) | `allan_deviation_analysis.R` |
 | Equation 4 (Covariance demonstration) | `data_with_covariance_computations.R`, `variance_of_an_average_of_correlated_variables.R` |
 | CV confidence intervals | `cv_confidence_intervals.R` |
 | Dwell time corrections | `dwell_time_corrections.R`, `table_2_slope_corrections.R` |

@@ -6,7 +6,7 @@ rm(list = ls())
 library(ggplot2)
 library(patchwork)
 
-# data from "Flow Injection Plateau Rates.docx" and "Flow Injection Plateau Counts.docx"
+# data from flow_injection_full_trace_rate.R and flow_injection_full_trace_count.R
 conc <- c(50, 250, 500, 1000, 1500)
 
 rate96 <- c(6503, 36351, 60374, 116243, 177676)

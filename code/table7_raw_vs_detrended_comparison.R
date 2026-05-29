@@ -1,5 +1,5 @@
 # Table7_Raw_vs_Detrended_Comparison.R
-#   Compares Table 7 correlation values computed on raw plateau rates
+#   Compares Table 5 correlation values computed on raw plateau rates
 #   vs. linearly detrended residuals. Runs all 10 combinations
 #   (5 concentrations x 2 dwell-time configs) and produces a
 #   side-by-side comparison table.
@@ -102,7 +102,7 @@ for (cfg in configs) {
 }
 
 cat("\n====================================================================\n")
-cat("Table 7 Comparison: Raw Plateau Rates vs Linearly Detrended Residuals\n")
+cat("Table 5 Comparison: Raw Plateau Rates vs Linearly Detrended Residuals\n")
 cat("====================================================================\n\n")
 
 cat("Adjacent-Dwell Average Correlation:\n\n")

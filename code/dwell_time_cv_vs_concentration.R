@@ -4,8 +4,7 @@
 # Last edit: 11/04/2022
 rm(list=ls())
 
-#   Data from ..\Flow Injection\Flow Injection Count Sum Performance.docx
-#     Table 1 columns 3 & 6
+#   Data from flow_injection_full_trace_count.R (Table 1 columns 3 & 6)
 conc <- c(50,250,500,1000,1500)
 mean96 <- c(624.3,3490,5796,11159,17057)
 mean21 <- c(448.8,2891,4946,9644,14417)
@@ -15,7 +14,7 @@ obsNoise21 <- c(36.42,140.5,208.4,402.2,600.8)
 obsNoise06 <- c(27.10,100.4,153.4,276.0,392.0)
 conNoise <- 300
 # these values were optimized to agree with the drop in covariance
-#   in manuscript Table 7.  
+#   in manuscript Table 5.  
 conNoise96 <- conNoise*0.096
 conNoise21 <- conNoise*0.079
 conNoise06 <- conNoise*0.063

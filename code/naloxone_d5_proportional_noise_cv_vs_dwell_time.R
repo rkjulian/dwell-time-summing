@@ -1,5 +1,5 @@
 # Naloxone d5 Proportional Noise CV vs Dwell Time.R
-#   ..\Project 66 - Flow Injection\R SRM\Flow Injection
+#   Proportional CV values from flow injection plateau analysis (d5 transition)
 # Author: Fred Lytle
 # Last edit: 7/19/2022
 rm(list=ls())
