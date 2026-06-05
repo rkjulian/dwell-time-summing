@@ -8,15 +8,15 @@ library(MASS) # provides mvrnorm() function
 # user supplied input
 N <- 1e8L
 
-# rate computed by rate = inter + slope*50 using R calibration output values
-area <- c(-0.008193414+0.002150751*50,-0.02694965+0.002191745*50,-0.0410818+0.002238781*50)
+# rate computed by rate = inter + slope*50 using 1/x^2 calibration output values
+area <- c(-0.00548607+0.00226033*50,-0.02609411+0.002302241*50,-0.04285641+0.002341541*50)
 
 # printed output title
 cat('\nChromatography Reverse Rate Normalized\nCalculated at 50 ng/mL Rate')
 
 # 96
-mu <- c(-0.008193414,0.002150751)
-covar <- matrix(data=c(0.008601558^2,-6.066918e-07,-6.066918e-07,8.980291e-05^2),nrow=2,ncol=2)
+mu <- c(-0.00548607,0.00226033)
+covar <- matrix(data=c(0.009387198^2,-7.225797e-07,-7.225797e-07,9.800522e-05^2),nrow=2,ncol=2)
 randomCoef <- mvrnorm(n=N,mu=mu,Sigma=covar)
 C <- (area[1] - randomCoef[,1])/randomCoef[,2]
 muC <- mean(C)
@@ -29,8 +29,8 @@ cat('\n96',
     '\n\tConc CV =',cv96)
 
 # 21
-mu <- c(-0.02694965,0.002191745)
-covar <- matrix(data=c(0.008989008^2,-6.625786e-07,-6.625786e-07,9.3848e-05^2),nrow=2,ncol=2)
+mu <- c(-0.02609411,0.002302241)
+covar <- matrix(data=c(0.008506465^2,-5.933516e-07,-5.933516e-07,8.881011e-05^2),nrow=2,ncol=2)
 randomCoef <- mvrnorm(n=N,mu=mu,Sigma=covar)
 C <- (area[2] - randomCoef[,1])/randomCoef[,2]
 muC <- mean(C)
@@ -43,8 +43,8 @@ cat('\n21',
     '\n\tConc CV =',cv21)
 
 # 06
-mu <- c(-0.0410818,0.002238781)
-covar <- matrix(data=c(0.008205447^2,-5.521008e-07,-5.521008e-07,8.566739e-05^2),nrow=2,ncol=2)
+mu <- c(-0.04285641,0.002341541)
+covar <- matrix(data=c(0.009638636^2,-7.61807e-07,-7.61807e-07,0.0001006303^2),nrow=2,ncol=2)
 randomCoef <- mvrnorm(n=N,mu=mu,Sigma=covar)
 C <- (area[3] - randomCoef[,1])/randomCoef[,2]
 muC <- mean(C)

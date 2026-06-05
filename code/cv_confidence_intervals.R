@@ -51,10 +51,10 @@ cat("Intervals overlap:",
 # Chromatographic data: n = 4 replicates (Table 3, 50 ng/mL row)
 n4 <- 4
 
-cv_96_n4 <- 0.0149
+cv_96_n4 <- 0.0865
 ci_96_n4 <- cv_ci(cv_96_n4, n4)
 
-cv_06_n4 <- 0.0185
+cv_06_n4 <- 0.0767
 ci_06_n4 <- cv_ci(cv_06_n4, n4)
 
 cat("\nn =", n4, "(chromatographic replicates, Table 3 50 ng/mL CVs)\n\n")

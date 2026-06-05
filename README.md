@@ -34,8 +34,7 @@ All R scripts assume the working directory is the repository root. Scripts read 
 ### Requirements
 
 - R (>= 4.0)
-- CRAN packages: `MASS`, `NADA`, `dplyr`, `tibble`
-- No Bioconductor or full-tidyverse dependencies
+- CRAN packages: `MASS`, `NADA`, `tidyverse`, `plotrix`, `pracma`, `patchwork`
 
 ### Script-to-Manuscript Map
 
@@ -45,16 +44,17 @@ All R scripts assume the working directory is the repository root. Scripts read 
 | Figure 2 (Flow injection traces) | `flow_injection_full_trace_rate.R`, `flow_injection_full_trace_count.R` |
 | Figure 3 (Excess noise CV vs concentration) | `dwell_time_cv_vs_concentration.R` |
 | Figure 4 (Combined calibration, panels A+B) | `flow_injection_calibration_combined.R` |
-| Figure 5 (Chromatogram peak) | `chromatogram_peak_counts.R`, `chromatogram_peak_rates.R` |
+| Figure 5 (Chromatogram peak) | `chromatogram_figure_05.R` |
 | Figure 6 (Allan deviation) | `allan_deviation_analysis.R` (sources `allan_deviation.R`) |
 | Table 1 (Plateau statistics) | `flow_injection_full_trace_rate.R`, `flow_injection_full_trace_count.R`, `table_1_values.R` |
 | Table 2 (Flow injection calibration) | `flow_injection_calibration_rate.R`, `flow_injection_calibration_count.R`, `table_2_slope_corrections.R` |
-| Table 3 (EMG peak areas) | `chromatogram_peak_rates.R`, `chromatogram_peak_counts.R` |
+| Table 3 (Numeric peak areas) | `chromatogram_numeric_areas.R` |
 | Table 4 (Correlation and covariance) | `flow_injection_dt_rate_average_correlations.R`, `flow_injection_dt_count_average_correlations.R` |
-| Table S1 (Reverse calibration, flow injection) | `flow_injection_reverse_calibration_rate_simulation.R`, `flow_injection_reverse_calibration_count_simulation.R` |
-| Table S2 (Reverse calibration, chromatography) | `chromatogram_reverse_calibration_rate_simulation.R`, `chromatogram_reverse_calibration_count_simulation.R` |
+| Table S1 (Reverse calibration, flow injection) | `flow_injection_reverse_calibration_rate_simulation.R`, `flow_injection_reverse_calibration_count_simulation.R`, `flow_injection_reverse_calibration_rate_normalized.R` |
+| Table S2 (Reverse calibration, chromatography) | `chromatogram_reverse_calibration_rate_simulation.R`, `chromatogram_reverse_calibration_count_simulation.R`, `chromatogram_reverse_calibration_normalized_simulation.R` |
 | Table S3 (Chromatography calibration parameters) | `chromatogram_calibration_peak_rates.R`, `chromatogram_calibration_peak_counts.R` |
 | Table S4 (Allan deviation log-log slopes) | `allan_deviation_analysis.R` |
+| Table S5 (EMG vs numeric area comparison) | `chromatogram_emg_vs_numeric_area.R` |
 | Figure S1 (Raw vs detrended Allan deviation) | `allan_deviation_analysis.R` |
 | Equation 4 (Covariance demonstration) | `data_with_covariance_computations.R`, `variance_of_an_average_of_correlated_variables.R` |
 | CV confidence intervals | `cv_confidence_intervals.R` |
@@ -65,6 +65,9 @@ All R scripts assume the working directory is the repository root. Scripts read 
 | IS proportional noise | `naloxone_d5_proportional_noise_cv_vs_dwell_time.R` |
 | 96 ms autocorrelation | `flow_injection_dt96_correlation_investigation.R` |
 | Raw vs detrended correlations | `table7_raw_vs_detrended_comparison.R` |
+| Normalized calibrations (flow injection) | `flow_injection_calibration_rate_normalized.R`, `flow_injection_calibration_count_normalized.R` |
+| Normalized calibrations (chromatography) | `chromatogram_calibration_peak_rates_normalized.R`, `chromatogram_calibration_peak_counts_normalized.R` |
+| Chromatogram data extraction | `chromatogram_peak_rates.R`, `chromatogram_peak_counts.R` |
 | Plateau drift visualization | `flow_injection_plateau_slope_histograms.R` |
 
 ### Shared Functions (`code/functions/`)

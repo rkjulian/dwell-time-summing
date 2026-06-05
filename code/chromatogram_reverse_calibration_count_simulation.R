@@ -10,18 +10,18 @@ useA50 <- FALSE
 target <- 50
 N <- 1e8
 
-# rate computed by rate = inter + slope*50 using table 5 1/x^2 calibration values
-A50 <- c(-61.06+18.65*target,-182.7+16.20*target,-189.6+10.83*target)
-Atable <- c(837.8,601.0,338.7)
+# count computed by count = inter + slope*50 using Table S3 1/x^2 calibration values
+A50 <- c(-27.50+17.24*target,-149.9+15.39*target,-175.3+10.36*target)
+Atable <- c(804.4,596.7,328.6) # values from manuscript Table 3
 
 # printed output title
 cat('\nChromatography Reverse Count',
     ifelse(useA50,'\nCalculated 50 ng/mL Rate','\nCalculated at at Table Rate'))
 
 # 96
-mu <- c(-61.06,18.65) # table 5 coefs
+mu <- c(-27.50,17.24) # Table S3 1/x^2 coefs
 # uses coef c(variance,covariance,covariance,variance)
-covar <- matrix(data=c(76.63^2,-48.15,-48.15,0.8001^2),nrow=2,ncol=2)
+covar <- matrix(data=c(69.90^2,-40.07,-40.07,0.7298^2),nrow=2,ncol=2)
 a01 <- mvrnorm(n=N,mu=mu,Sigma=covar)
 A <- ifelse(useA50,A50[1],Atable[1])
 C <- (A - a01[,1])/a01[,2]
@@ -35,9 +35,9 @@ cat('\n96',
     '\n\tCV =',cv96)
 
 # 21
-mu <- c(-182.7,16.20) # table 5 coefs
+mu <- c(-149.9,15.39) # Table S3 1/x^2 coefs
 # uses coef c(variance,covariance,variance)
-covar <- matrix(data=c(71.84^2,-42.31,-42.31,0.7500^2),nrow=2,ncol=2)
+covar <- matrix(data=c(66.54^2,-36.31,-36.31,0.6947^2),nrow=2,ncol=2)
 a01 <- mvrnorm(n=N,mu=mu,Sigma=covar)
 A <- ifelse(useA50,A50[2],Atable[2])
 C <- (A - a01[,1])/a01[,2]
@@ -51,9 +51,9 @@ cat('\n21',
     '\n\tCV =',cv21)
 
 # 06
-mu <- c(-189.6,10.83) # table 5 coefs
+mu <- c(-175.3,10.36) # Table S3 1/x^2 coefs
 # uses coef c(variance,covariance,variance)
-covar <- matrix(data=c(45.08^2,-16.67,-16.67,0.4707^2),nrow=2,ncol=2)
+covar <- matrix(data=c(44.99^2,-16.59,-16.59,0.4697^2),nrow=2,ncol=2)
 a01 <- mvrnorm(n=N,mu=mu,Sigma=covar)
 A <- ifelse(useA50,A50[3],Atable[3])
 C <- (A - a01[,1])/a01[,2]
